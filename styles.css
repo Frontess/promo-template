@@ -1,0 +1,318 @@
+/*  Общие стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*  Промо-блок */
+.promo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.promo-left,
+.promo-center,
+.promo-form {
+  width: 100%;
+}
+
+.promo-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.promo-header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.promo-header p {
+  margin: 5px 0;
+}
+
+.promo-banner {
+  background-color: #f0f0f0;
+  padding: 15px 20px;
+  border-left: 5px solid #007bff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.promo-banner .arrow {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.promo-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.promo-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.promo-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.promo-form button:hover {
+  background-color: #e53935;
+}
+
+.promo-header strong {
+  color: #007bff;
+  font-size: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Блоки по центру */
+.middle-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.middle-row section ul {
+  list-style: none;
+}
+
+.middle-row section ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.marker {
+  width: 24px;
+  height: 24px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+}
+
+.advantages li img {
+  width: 24px;
+  height: 24px;
+}
+
+.advantages ul {
+  list-style: none;
+  padding: 0;
+}
+.reviews {
+  margin: 20px;
+}
+.reviews a {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  text-decoration: none;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/* Стили при наведении */
+.reviews a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Стили для посещенных ссылок */
+.reviews a:visited {
+  color: #666;
+}
+.advantages li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantages li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.advantages li:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.advantages li img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Эффект для иконок при наведении на весь элемент <li> */
+.advantages li:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #007bff);
+}
+
+.advantages li:active img {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
+
+/* Секция специалистов */
+.specialists {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Адаптивность */
+
+/* от 769px */
+@media (min-width: 769px) {
+  .promo {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .promo-left,
+  .promo-center,
+  .promo-form {
+    width: 33.33%;
+  }
+
+  .middle-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: calc(50% - 10px);
+  }
+
+  .specialists {
+    width: 50%;
+  }
+
+  .carousel-track {
+    gap: 20px;
+  }
+}
+
+/* от 1025px */
+@media (min-width: 1025px) {
+  .promo-left {
+    width: 25%;
+  }
+
+  .promo-center,
+  .promo-form {
+    width: 37.5%;
+  }
+
+  .middle-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .specialists {
+    width: 30%;
+  }
+
+  .carousel-track {
+    gap: 14px;
+  }
+
+  .card {
+    width: calc(50% - 15px);
+  }
+}
